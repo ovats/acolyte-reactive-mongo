@@ -1,8 +1,8 @@
+# This is a cloned repository of: https://github.com/cchantep/acolyte/tree/reactivemongo-tutorial
+
 # Acolyte/ReactiveMongo tutorial
 
 This tutorial is about how to use [Acolyte](http://acolyte.eu.org/reactive-mongo.html) and [specs2](http://etorreborre.github.io/specs2/) to test project using [ReactiveMongo](http://reactivemongo.org/).
-
-[![Build Status](https://secure.travis-ci.org/cchantep/acolyte.png?branch=reactivemongo-tutorial)](http://travis-ci.org/cchantep/acolyte)
 
 ## Requirements
 
