@@ -10,6 +10,7 @@ import reactivemongo.bson.{
   BSONValue
 }
 import reactivemongo.api.commands.WriteResult
+import reactivemongo.api.Cursor
 
 object Persistence {
   implicit object UserInfoReader extends BSONDocumentReader[UserInfo] {
@@ -35,7 +36,7 @@ object Persistence {
   /** Returns names and descriptions for all users. */
   def all(implicit c: BSONCollection, ec: ExecutionContext): Future[List[UserInfo]] = c.find(BSONDocument.empty,
     BSONDocument("name" -> true, "description" -> true)).
-    cursor[UserInfo]().collect[List]()
+    cursor[UserInfo]().collect[List](-1, Cursor.FailOnError[List[UserInfo]]())
 
   /**
    * Saves given `user`: creates it if doesn't already exist, or update it.
